@@ -1,0 +1,24 @@
+#PBS -N cell_ranger_count_test
+#PBS -S /bin/bash
+#PBS -l walltime=24:00:00
+#PBS -l nodes=1:ppn=4
+#PBS -l mem=16gb
+#PBS -o /gpfs/data/mcnerney-lab/liuweihan/scRNA/test_run/count.out
+#PBS -e /gpfs/data/mcnerney-lab/liuweihan/scRNA/test_run/count.err
+
+date
+
+module load gcc/6.2.0
+module load cellranger/3.0.2
+
+cellranger count --id=scRNApilot --transcriptome=/gpfs/data/mcnerney-lab/liuweihan/scRNA/test_run/refdata-cellranger-GRCh38-3.0.0 --f$
+
+out=/gpfs/data/mcnerney-lab/liuweihan/scRNA/test_run
+log=/gpfs/data/mcnerney-lab/liuweihan/scRNA/test_run/count.log
+
+
+
+date
+echo END
+
+
