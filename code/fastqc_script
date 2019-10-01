@@ -1,3 +1,5 @@
+###this file is the fastqc file for the second lane of sequencing, it's here as a demo
+
 #!/bin/bash
 
 #PBS -S /bin/bash
