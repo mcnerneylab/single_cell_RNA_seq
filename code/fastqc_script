@@ -1,0 +1,37 @@
+#!/bin/bash
+
+#PBS -S /bin/bash
+#PBS -l walltime=16:00:00
+#PBS -l nodes=1:ppn=4
+#PBS -l mem=16gb
+#PBS -o /gpfs/data/mcnerney-lab/liuweihan/scRNA/raw_data_ln2/fastqc/fastqc.out
+#PBS -e /gpfs/data/mcnerney-lab/liuweihan/scRNA/raw_data_ln2/fastqc/fastqc.err
+
+date
+module load java-jdk/1.10.0_1
+module load fastqc/0.11.7
+
+s1 = /gpfs/data/mcnerney-lab/liuweihan/scRNA/raw_data_ln2/KON-1/KON-1_S1_L002_R1_001.fastq.gz
+
+s2 = /gpfs/data/mcnerney-lab/liuweihan/scRNA/raw_data_ln2/KON-1/KON-1_S1_L002_R2_001.fastq.gz
+
+s3 = /gpfs/data/mcnerney-lab/liuweihan/scRNA/raw_data_ln2/KON-1/KON-1_S1_L002_R2_001.fastq.gz
+
+s4 = /gpfs/data/mcnerney-lab/liuweihan/scRNA/raw_data_ln2/KON-2/KON-2_S2_L002_I1_001.fastq.gz
+
+s5 = /gpfs/data/mcnerney-lab/liuweihan/scRNA/raw_data_ln2/KON-2/KON-2_S2_L002_R1_001.fastq.gz
+
+s6 =  /gpfs/data/mcnerney-lab/liuweihan/scRNA/raw_data_ln2/KON-2/KON-2_S2_L002_R2_001.fastq.gz
+
+s7 = /gpfs/data/mcnerney-lab/liuweihan/scRNA/raw_data_ln2/KON-3/KON-3_S3_L002_I1_001.fastq.gz
+
+s8 = /gpfs/data/mcnerney-lab/liuweihan/scRNA/raw_data_ln2/KON-3/KON-3_S3_L002_R1_001.fastq.gz
+
+s9 = /gpfs/data/mcnerney-lab/liuweihan/scRNA/raw_data_ln2/KON-3/KON-3_S3_L002_R2_001.fastq.gz
+
+log = /gpfs/data/mcnerney-lab/liuweihan/scRNA/raw_data_ln2/fastqc/fastqc.log
+
+fastqc -t 8 -o $out $s1 $s2 $s3 $s4 $s5 $s6 $s7 $s8 $s9 2> $log
+
+date
+echo END
